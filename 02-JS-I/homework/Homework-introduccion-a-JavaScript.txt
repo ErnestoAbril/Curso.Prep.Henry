@@ -1,0 +1,92 @@
+VARIABLES:
+
+Podríamos decir que las variables son, como contenedores, donde guardamos un valor especifico, en algunas, este valor se contiene por algún tiempo, en otras el valor no varía y se mantiene fijo, en las variables podemos almacenar varios tipos de información, por ejemplo podemos guardar un número, una palabra o una afirmación (verdadero o falso), las variables hay que declararlas (manifestarle al sistema que se va a crear una variable), por lo tanto hay una sintaxis o forma correcta para declarar una variable.
+Sintaxis para declarar una variable en JavaScrip: la palabra clave + espacio + un nombre para la variable + espacio + un signo '=' + espacio + un valor
+
+Ejemplo:
+
+var comidafavorita = 'pizza con jamón';
+
+La palabra clave puede ser VAR, LET o CONST, las palabras clave VAR y LET se usan para declarar variables cuyo valor puede cambiar en determinado momento, la palabra clave CONST se utiliza para declarar variables que no van a cambiar su valor o contenido y siempre van a contener el mismo valor. 
+Cuando el valor contenido en la variable es una palabra (cadena de caracteres), dicha palabra o palabras se deben encerrar entre comillas.
+
+
+
+STRING:
+
+Los STRING son cadenas de caracteres ordenados, o un grupo de letras que están ordenadas adecuadamente para que nos brinden cierta información, por ejemplo la palabra 'universidad' es un string, son un grupo de letras ordenadas que nos brindan cierta información,  los string generalmente se usan para dar un valor a una variable, por ejemplo:
+
+	var apellido = 'Pérez' ,
+
+El string PEREZ se guardara en la variable de nombre apellido.
+
+
+
+FUNCIONES (ARGUMENTOS, RETURN)
+
+	Las funciones son pequeños paquetes de instrucciones (código de programación), los cuales realizan una tarea específica, y se pueden mandar ejecutar repetidamente, en el momento que lo requiramos , por ejemplo si en un determinado sistema requerimos tomar la temperatura varias veces de mismo objeto, entonces creamos una función que solo tome temperatura, y cada vez que se requiera la temperatura de ese objeto mandamos a ejecutar nuestra función para tomar temperatura, dicha función nos va a decir cada vez que se ejecute, cual es la temperatura de dicho objeto en ese momento.
+Este paquete de instrucciones que realizan cierta tarea al que llamamos FUNCION, puede utilizar ciertos datos con los que ejecuta la tarea , a estos distintos datos que se utilizan en las funciones se les llama argumentos, y pueden ser varios o ninguno.
+Las funciones siempre realizan una tarea específica, y dicha tarea puede arrojarnos o darnos cierta información necesaria para nuestro sistema u otra función, entonces podemos guardar el resultado de nuestra función en una variable y usarla en otra función o proceso, para retirarnos de nuestra función con la información necesaria usamos la palabra clave RETURN, con la que guardamos la información o resultado de nuestra función y nos retiramos de la misma.
+Las funciones también deben declararse al igual que las variables, y también requieren de cierta sintaxis o forma de estructurada de declaración. la sintaxis de declaración de una función es: Palabra clave FUNCTION + espacio + nombre de la función + espacio + un paréntesis abierto + todos los argumentos separados por ',' + espacio + un paréntesis cerrado + espacio + corchete abierto + todas las instrucciones necesarias para que se cumpla la tarea de la función + espacio + corchete cerrado.
+
+Ejemplos de funciones:
+
+Ejemplo 1.
+
+	function MiPrimerFuncion () {
+        		suma = 6 + 3
+       	}
+
+Aquí tenemos una función sencilla llamada MiPrimerFuncion, donde cada vez que se llame a esta función lo único que va  a hacer es sumar 6 más 3 y el resultado se asigna a la variable suma.
+
+
+Ejemplo 2.
+
+	function saludo(nombre) {
+		console.log('Hola ' + nombre); 
+	}
+
+Aquí tenemos una función llamada saludo, la cual usa un argumento llamado nombre, o sea que al momento de hacer el llamado de la función, debemos dar un valor al argumento nombre para que la función pueda ejecutar su tarea, por ejemplo podrías hacer el llamado de la función de esta manera:
+
+   	saludo('Pedro');
+
+y al terminar de ejecutarse la función se imprimirá en la pantalla del computador 
+
+Hola Pedro
+
+
+Ejemplo 3.
+
+ 	function OperacionesMat(a, b, c) {
+		var resultado = a * b + c;
+		return resultado;
+	}
+
+Aquí tenemos una función de nombre OperacionesMat, que requiere de 3 argumentos (a, b, c), con los cuales va a realizar unas operaciones matemáticas y el resultado lo asignara a la variable resultado, y luego hace un retorno al programa principal, el llamado a realizar esta función podría ser:
+
+var ResultadoMat = OperacionesMat(2, 5, 6);
+console.log(ResultadoMat);
+
+Luego de ejecutarse la función OPeracionesMat, se guardaría el resultado de la función OperacionesMat en la variable ResultadoMat, y se imprimiría en la pantalla del computador:
+
+16
+
+
+
+DECLARACIONES IF
+
+	La declaración IF, se utiliza para comparar valores, es como si realizáramos una pregunta y dependiendo de la respuesta se toman determinadas acciones, por ejemplo en nuestro lenguaje, yo puedo preguntar: ¿si es de día?, de ser cierto, podría tomar la acción de ir a laborar, pero si no es cierto podría tomar la acción de acostarme, en JavaScrip se utiliza la palabra clave IF para realizar este tipo de comparaciones y determinar que camino tomara el programa, porque después de realizarse la comparación la función devolverá un valor que puede ser verdadero o falso.
+
+La sintaxis para la declaración comparativa IF es: la palabra clave IF + espacio + abrir paréntesis + instrucción de comparación lógica + espacio + cerrar paréntesis + espacio + abrir corchete + espacio + grupo de instrucciones que deben ejecutarse en caso de ser verdadera la comparación lógica + espacio + cerrar corchete + espacio + instrucciones en caso de ser falsa la comparación lógica + espacio + cerrar corchete
+
+Ejemplo de función con declaración IF:
+
+	function Viejo(edad) {
+		if ( edad  >  50 ) {
+			return true;
+		}	
+		return false:
+	}	
+
+Aquí la función llamada Viejo, utiliza un argumento (edad), y realiza en primer lugar una comparación de la variable edad, con el valor 50, si el valor ingresado en el argumento al realizar la llamada de la función Viejo, es mayor que 50 la función devolverá el valor TRUE y se detendrá, pero si el valor de edad es menor o igual a 50, la función devolverá el valor FALSE y se detendrá.
+
