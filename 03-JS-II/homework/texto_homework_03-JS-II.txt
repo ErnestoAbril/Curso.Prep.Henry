@@ -1,0 +1,111 @@
+Sentencia o instrucción FOR (bucle)
+
+Se utiliza para repetir un número definido de veces, un grupo de instrucciones, el bucle FOR se repite mientras que el valor de una condición específica sea TRUE (Verdadero), hay que pasar 3 parámetros con la función FOR:
+- La inicialización de la variable
+- Operando o expresión a cumplir para que se mantenga en bucle continuo
+- Parámetro de incremento que se hace a la variable para control del bucle,
+
+Ejemplo de bucle FOR
+
+      1	var a = “*”;
+	2	for ( i = 0; i < 5; i++ ) {
+	3		console.log( a );
+	4		a = a + “*”;
+	5	}
+ 
+En el ejemplo usamos una instrucción de bucle FOR para ejecutar repetidas veces (5 veces en nuestro ejemplo) la impresión de la variable “a”, el código escrito aquí se puede traducir de la siguiente manera:
+- En la primer línea de código, se asigna el valor de “*” a la variable a.
+- En la segunda línea de código, Se declara el bucle FOR con sus parametros. Que traducidos dirían algo así como: el valor de la variable i es inicia en 0, y este bucle se va a repetir mientras i sea menor que 5, y cada vez que se repita el bucle FOR la variable i se incrementara (i = i +1).
+- En la tercer línea de código, se imprimirá en pantalla el valor actual de a.
+- En la cuarta línea de código, al valor de la variable a, se le sumara otro *.
+- En la quinta línea de código, se cierran las instrucciones del bucle FOR.
+
+El proceso se ejecutaría así:
+La variable a tiene valor *, luego entraríamos al bucle FOR, donde están los parámetros de funcionamiento del bucle (así, la variable i, vale 0, y el bucle se debe repetir mientras i tenga valor menor que 5, y i se va a ir incrementando de a uno), entonces inician las instrucciones o el cuerpo  del bucle (ya que, el valor de i es 0 (menor que 5)), y lo primero es imprimir en pantalla el valor de a, luego le sumamos otro * a la variable a, volvemos al inicio del bucle donde i se incrementa en 1 con lo que pasaría a valer 1 (porque valia 0), y como i sigue siendo menor que 5, entonces se repite una vez más el bucle, se imprime a que ya vale **, se suma otro asterisco a a, y volvemos al inicio del bucle sumándole 1 a i, de esta manera i vale 2 y a vale ***, se repite el bucle imprimiendo ***, sumándole a a otro asterisco, sumándole 1 a i, quedando entonces i = 3, y a = ****, se repite el bucle y se imprime ****, sumándole otro asterisco a a e incrementando i, como i toma el valor de 4, aun menor que 5, se repite el bucle imprimiendo *****, agregando otro asterisco a a, y sumando 1 a i, entonces i pasaría a valer 5, de esta manera deja de cumplirse la condición del bucle, que i debe valer menos que 5, por lo tanto el bucle termina y se sale ya sin volver a ejecutar las instrucciones de imprimir, etc. 
+
+
+
+
+Si ejecutamos este código veríamos en la pantalla del computador algo así:
+
+*
+**
+***
+****
+*****
+
+
+Operador lógico AND (&&)
+
+      Es un operador lógico comparativo, por lo tanto lo utilizamos para comparar varias expresiones o operandos, el operador AND (&&) nos sirve cuando requerimos que se cumplan todo un grupo de condiciones, hay que recordar que los operadores lógicos funcionan o se rigen por la evolución por corto circuito (camino más corto), o sea, el operador && procesa sus operandos de izquierda a derecha, convirtiendo cada operando a booleano, hasta que se alcanza el primer valor falso (FALSE), y una vez alcanzado, el operador retorna con el valor de ese último operando,  sin procesar los demás operandos; pero si el operador && no consigue ningún operando que al ser transformado sea FALSE retornara el valor del ultimo operando, ya que todos los operandos fueron evaluados, o sea, son verdaderos (TRUE).
+      EJ:
+      1	console.log(1 && 4 && null && 8);	//retornaría null, sin procesar el 8
+      
+      Otro ejemplo
+      2	console.log( 1 && 2 && 3 );		// retornaría 3, todos son TRUE
+       
+      Si y solo si, todos los operandos o expresiones son TRUE retornara un valor TRUE, se lo contrario retornara un valor FALSE.
+      Hay que tomar en cuenta que la precedencia del operador AND (&&) es mayor que la del operador OR (||), así que en las operaciones combinadas con && y ||, se ejecutan primero las operaciones con &&, tal como, si estuvieran encerradas en un paréntesis.
+      O sea, en el código: a && b || c && d, las operaciones se ejecutarían como si estuvieran en paréntesis, o sea (a && b) || (c && d).
+
+
+Ejemplo de operador AND (&&)
+
+function adolescencia(a) {
+if (a > 12  &&  a < 18) { 	//Se usa el operador && para comparar la variable 'a' con
+//dos valores para tomar una decisión 
+    	console.log('eres adolescente porque tienes ' + a +' años' );
+    	}
+    	else console.log('no eres adolescente porque tienes ' + a +' años');
+}
+
+Si hacemos la llamada a la función “adolescencia” con la siguiente sentencia:
+Adolescencia(15);
+
+Se imprimiría en pantalla:
+Eres adolescente porque tienes 15 años
+
+
+Operador lógico OR (||)
+
+      También es un operador lógico comparativo, el cual utilizamos para comparar varias expresiones o operandos, el operador OR (||) nos sirve cuando requerimos que se cumpla (TRUE) solo uno de los operandos, este operador también funciona o se rigen por la evolución por corto circuito (camino más corto), o sea, el operador || procesa sus operandos de izquierda a derecha, convirtiendo cada operando a booleano, hasta que se alcanza el primer valor verdadero (TRUE), y una vez alcanzado, el operador retorna con el valor de ese último operando,  sin procesar los demás operandos; pero si el operador || no consigue ningún operando que al ser transformado sea TRUE, retornara el valor del ultimo operando, ya que todos los operandos fueron evaluados, o sea, son falsos (FALSE). Pero para que sea retornado un valor TRUE (verdadero), solo debe ser verdadera (TRUE) una y solo una, de todas las expresiones que se están comparando, por lo tanto el operador OR (||) nos sirve, cuando requerimos que se cumpla solo una de varias expresiones o condiciones. 
+
+Ejemplo de operador OR (||)
+
+Usando el ejemplo anterior pero con el operador OR (||)
+
+function adolescencia(a) {
+    if (a <= 12  ||  a >= 18) { 	//Se usa el operador || para comparar la variable 'a' con
+                        			//dos valores para tomar una decisión 
+        console.log('No eres adolescente porque tienes ' + a +' años' );
+    }
+        else console.log('Eres adolescente porque tienes ' + a +' años');
+}
+
+Si hacemos la llamada a la función “adolescencia” con la siguiente sentencia:
+Adolescencia(15);
+
+Se imprimiría en pantalla:
+Eres adolescente porque tienes 15 años
+
+      NOTA: no hay que olvidar que la precedencia del operador OR (||) es menor que la del operador AND (&&), así que en las operaciones combinadas con || y &&, se ejecutan primero las operaciones con &&, tal como, si estuvieran encerradas en un paréntesis.
+O sea, en el código: a && b || c && d, las operaciones se ejecutarían como si estuvieran en paréntesis, o sea (a && b) || (c && d).
+
+
+
+Operador lógico NOT  (!)
+	El operador lógico de negación (!), es tal vez el operador más utilizado, y solo acepta un argumento o operando, lo utilizamos cuando requerimos un valor booleano contrario al valor de la variable, expresión u operando.
+      El operador NOT (!), también se usa cuando solo queremos obtener el valor booleano primario de una variable o expresión, en estos casos se utiliza doble (!!).
+      
+      Ejemplos de uso de operador “!”
+
+n1 = !5  	//	retorna FALSE
+n2 = !!5		// 	retorna TRUE
+n3 = !0		//	retorna TRUE
+n4 = !'Gato'	//	retorna FALSE
+n5 = !''		//	retorna TRUE
+
+	La precedencia de NOT (!), es la mayor de todos los operadores lógicos, así que siempre se ejecuta primero que && ó ||.
+
+
+
