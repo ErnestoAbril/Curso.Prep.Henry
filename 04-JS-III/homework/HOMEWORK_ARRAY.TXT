@@ -1,0 +1,116 @@
+ARRAYS
+
+Los arreglos son una variable especial, que puede contener más de un valor, o sea, un grupo de valores o datos que están guardados en un mismo elemento, en javascript los arreglos no necesariamente deben ser elementos homogéneos o de un mismo tipo, pueden ser tipos de datos diferentes, y al igual que las variables, los arreglos deben declararse, para ser creados. Una analogía de un arreglo (array) podría ser, un canasto de flores; el canasto puede tener distintos tipos de flores como: rosas, orquídeas, tulipanes, etc., pero debemos crear el canasto primero y luego si, lo llenamos con las flores que queramos, sin olvidar que los elementos deben ir entre corchetes, en este caso, las flores.
+
+Podemos usar 2 métodos para crear o definir un arreglo y llenarlo:
+1 - definirlo y llenarlo de una vez, ejemplos:
+- const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+- const CanastoDeFlores = new Array(‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’);
+los 2 ejemplos anteriores hacen exactamente lo mismo.
+
+2- definirlo y luego llenarlo, por ejemplo:
+	Primero lo definimos, ejemplos:
+- const CanastoDeFlores = [];
+- const CanastoDeFlores = new Array ();
+Luego lo llenamos, ejemplos:
+- CanastoDeFlores[0] = ‘Rosas’;
+- CanastoDeFlores[1] = ‘Tulipanes’;
+- CanastoDeFlores[2] = ‘Margaritas’;
+- CanastoDeFlores[3] = ‘Orquídeas’;
+
+
+Acceso a los elementos de un arreglo
+Cada uno de los elementos del arreglo recibe un número, que corresponde a su posición o ubicación dentro del arreglo, a este número se le llama índice, el primer elemento del arreglo recibe el índice 0, el segundo elemento del arreglo recibe el índice 1, el tercer elemento recibe el índice 2, y así sucesivamente hasta el último elemento.
+Ej:
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+				  0	     1	  	  2	 	3
+
+Para acceder al valor de un elemento del arreglo en cualquier momento, solo debemos hacer un llamado con el nombre del arreglo, seguido del índice entre corchetes.
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      console.log(CanastoDeFlores[2];
+
+Nos arrojaría: // Margaritas
+
+Cambio de un elemento de un arreglo
+Tal como habíamos explicado anteriormente (en los métodos de definición de los arreglos), le asignamos un valor específico a un elemento del arreglo, haciendo una declaración del nombre del arreglo seguido de corchetes que encierran el índice del elemento al que queremos asignar el valor, ejemplo:
+Si tenemos:
+      CanastoDeFlores = [‘Rosas’, ‘Claveles’, ‘Margaritas’, ‘Orquídeas’];
+
+Y damos la instrucción:
+ 	CanastoDeFlores[1] = ‘Tulipanes’;
+
+La instrucción anterior asignara el valor ‘Tulipanes’ al segundo elemento del arreglo CanastoDeFlores, quedando así:
+
+      CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+
+Hay que tener en cuenta que si agregamos elementos con índices altos, esto va a generar huecos dentro del arreglo, por ejemplo:
+
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      CanastoDeFlores[8] = ‘Claveles’;
+
+Estas instrucción agregaria el valor ‘Claveles al elemento noveno de nuestro arreglo, generando huecos desde el elemento 4 al 7.
+
+
+Método .length
+El método .length lo usamos para saber la cantidad de elementos que contiene un arreglo, en nuestro ejemplo:
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      console.log(CanastoDeFlores.length);
+
+Nos arrojaría:	//  4
+
+
+Métodos  .push  y  .pop
+Estos métodos los usamos para agregar o eliminar los últimos elementos de un arreglo.
+Ejemplo de .push:
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      CanastoDeFlores.push(‘Claveles’);
+      Console.log(CanastoDeFlores);
+Nos arrojaría:	// [ ‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’, ‘Claveles’]
+
+Ejemplo de .pop:
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      CanastoDeFlores.pop();
+      Console.log(CanastoDeFlores);
+Nos arrojaría:	// [‘Rosas’, ‘Tulipanes’, ‘Margaritas’]
+
+
+Métodos  .unshift  y  .shift
+Estos métodos funcionan igual que los métodos .push y .pop, excepto que no realizan los cambios en el último elemento del arreglo sino en el primero.
+Ejemplo de .unshift:
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      CanastoDeFlores.unshift(‘Claveles’);
+      Console.log(CanastoDeFlores);
+Nos arrojaría:	// [‘Claveles’, ‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’]
+
+Ejemplo de .shift:	
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      CanastoDeFlores.shift();
+      Console.log(CanastoDeFlores);
+Nos arrojaría:	// [‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’]
+
+
+Uso de bucles con arreglos
+Se pueden utilizar arreglos para tener acceso o asignar los valores de los elementos de un arreglo, por ejemplo usar un bucle FOR con un arreglo:
+      const CanastoDeFlores = [‘Rosas’, ‘Tulipanes’, ‘Margaritas’, ‘Orquídeas’];
+      for (let i = 0; i < CanastoDeFlores.length;  i++) {
+		console.log(CanastoDeFlores[i]);
+	}
+Nos arrojaría:
+// Rosas
+// Tulipanes
+// Margaritas
+// Orquídeas
+	
+
+A tener en cuenta
+
+- En JavaScript, las matrices que son un tipo especial de objeto, usan solo índices numerados, pero, los objetos usan índices con nombre (string), por lo tanto se deben usar objetos cuando se desee que los nombres de los elementos sean cadenas de texto (String) .
+
+- Aunque es lo mismo la instrucción:
+      const calificación = new Array(5, 10, 8, 6);
+	       Y la instrucción:
+      const calificación = [5, 10, 8, 6];
+	
+	       NO es lo mismo:
+      const calificación = new Array(5);     // crea un arreglo de 5 elementos indefinidos
+      const calificación = [5];		       // crea un arreglo de 1 elemento con valor 5
