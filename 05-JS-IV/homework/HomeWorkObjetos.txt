@@ -1,0 +1,90 @@
+OBJETOS:
+
+Son entes abstractos que se usan en programación, para separar o dividir una aplicación en componentes diferentes, y de esta manera, se nos facilite la elaboración y depuración de la misma, una vez creados los componentes (objetos), es más sencillo y versátil armar toda la aplicación. Los objetos son como pequeñas partes de la aplicación, que ejecutan ciertos procedimientos de manera independiente, y que son llamados para ejecutarse desde el código principal de la aplicación.
+De una manera más técnica un objeto en JavaScript es una variable especial que puede tener mas variables en su interior, de tal manera que tenemos la posibilidad de organizar múltiples variables referentes al mismo tema (objeto).
+
+Podemos crear o definir los objetos de las siguientes con las siguientes declaraciones:
+
+Con la palabra clave (constructor de objetos): 
+	const miObjeto = new Object();    	//creamos un objeto vacío llamado miObjeto
+
+Con los literales (literal):
+	const miObjeto = {};   			//Creamos un objeto vacío llamado miObjeto
+
+
+PROPIEDADES:
+
+	Los objetos están compuestos o llenos de variables, que son pares clave:valor, a estas variables que están dentro de los objetos se les denomina propiedades,  todas las propiedades de un objeto tienen un nombre (clave) y su respectivo valor (valor), las propiedades de un objeto se pueden cambiar, agregar, eliminar aunque algunas son de solo lectura, el valor de las propiedades de un objeto puede ser un dato de cualquier tipo básico, un arreglo, una función u otros objetos .
+
+Ejemplo: 
+let estudiante = {		 // un objeto con nombre: estudiante
+nombre: "John",	 // En la propiedad llamada "nombre" se almacena el valor "John"
+  edad: 30			// En la propiedad llamada "edad" se almacena el valor 30
+};
+
+
+METODOS:
+
+	En JavaScript las funciones son un tipo especial de objeto, las cuales podemos tratar igual que a un string o número, por lo tanto, las propiedades de un objeto pueden contener una función, en estos casos, se llaman métodos.
+ En otras palabras un método es una función la cual es una propiedad de un objeto
+
+#Ejemplo:
+var perro = new Object();
+perro.nombre = "Rufus";
+perro.especie = "Labrador";
+perro.saludo = function() { console.log("guauu"); }
+
+Aquí tenemos un objeto llamado perro que tiene 3 propiedades, las dos primeras tienen como valor tipos de datos primitivos (string), pero la tercera propiedad, tiene como valor una función, por lo tanto saludo es un método del objeto perro.
+
+
+BUCLE FOR … IN:
+
+	Es una forma especial del bucle FOR, que se utiliza para recorrer todas las propiedades enumerables de un objeto, ósea, con este bucle podemos recorrer o iterar todas las propiedades de un objeto, tiene una sintaxis muy sencilla, que es:
+
+For (variable in objeto){
+   instrucciones 
+}
+
+Ejemplo de FOR IN :
+
+var miObjeto = {a: 1, b: 2, c: 3};		//Definimos el objeto miObjeto, y damos valores a sus
+//propiedades ‘a’, ‘b’, ‘c’
+for (var propiedad in miObjeto) {
+  console.log(`miObjeto.’ + propiedad + “ = “ + miObjeto[propiedad]);
+}
+
+// Nos produciria:
+// "miObjeto.a = 1"
+// "miObjeto.b = 2"
+// "miObjeto.c = 3"
+
+En el ejemplo anterior con la instrucción console.log(), al ejecutarse propiedad, nos muestra el nombre de las propiedades (claves) de miObjeto, mientras que la instrucción miObjeto[propiedad], Nos mostrara el valor guardado en la propiedad (valores).
+
+
+NOTACION DE PUNTOS VS NOTACION DE CORCHETES:
+
+Tanto la notación de puntos como la de corchetes, son utilizadas para asignar o acceder a los valores de las propiedades de un objeto, por ejemplo:
+En el objeto carro tenemos:
+var carro = {
+  fabricante: ´honda´’,
+  color: ’Rojo’,
+  KpL: 34,
+  motores: 1,
+  año de fabricación: 2015,
+}
+
+Asignación de valores a una propiedad con notación de puntos:
+Carro.color = ‘verde’;		//asignaríamos a la propiedad color el valor ‘verde’
+
+Asignación de valores de una propiedad con notación de corchetes:
+Carro[‘color’]  = ‘verde’; 	//asignaríamos a la propiedad color el valor ‘verde’
+
+Acceso a los valores de una propiedad con notación de puntos:
+Carro.fabricante; 		//obtendríamos ‘honda’
+
+Acceso a los valores de una propiedad con notación de corchetes:
+Carro[‘fabricante’]; 	 	//obtendríamos ‘honda’
+
+Pero si quisiéramos accesar o asignar valores a la propiedad ‘año de fabricación’ del objeto carro, no se podría utilizar la notación de puntos ya que esta no admite nombres de variables no validos en JavaScript, en estos casos debemos usar la notación de corchetes.
+
+En resumen cualquiera de las dos notaciones se puede usar, pero no se puede usar la notación de puntos cuando el nombre de la propiedad está contenido en una variable, o contiene caracteres no permitidos en los identificadores, por ejemplo cuando comienza con un digito, o contiene un espacio o un guion.
