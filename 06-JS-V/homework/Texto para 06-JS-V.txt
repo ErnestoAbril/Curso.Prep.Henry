@@ -1,0 +1,71 @@
+PROTOTYPE y CONSTRUCTORES:
+
+	Cuando tenemos que crear objetos repetidamente, que tienen propiedades y métodos 
+comunes, creamos una función, que es básicamente una plantilla, para generar instancias con las 
+mismas propiedades y métodos unas y otras, a esta plantilla que usamos para generar instancias 
+con propiedades iguales le llamamos CONSTRUCTOR o CLASE, el cual nos ahorra repetición de 
+código, errores, nos facilita la depuración del código, etc.
+      Hay que recordar que JavaScript es un lenguaje basado en prototipos y no en CLASES, 
+antes del año 2015 no existían las clases en JavaScript, los desarrolladores usaban funciones 
+constructoras para imitar el patrón de las CLASES usado en otros lenguajes de programación, pero 
+a partir de la versión ES6 (ECMAScript 2015), se introdujo CLASES en el lenguaje JavaScript, las 
+cuales no ofrecen una funcionalidad adicional o nueva en el lenguaje, ya que solo ofrecen una 
+sintaxis más limpia y elegante de lo que se venía haciendo (por los programadores), para imitar las 
+CLASES.
+      Como ya dijimos, JavaScript es un lenguaje basado en prototipos, por lo tanto, un objeto 
+prototipo puede contener otro objeto prototipo del cual se heredan métodos y propiedades, y así 
+sucesivamente, esto es conocido como cadena de prototipos.
+      Entonces, todos los objetos que vamos creando en JavaScipt, son instancias del objeto 
+padre Object, por lo tanto, cada vez que creamos un objeto, éste, hereda todas las propiedades 
+del objeto Object, y los objetos creados por nosotros no solo contendrán las propiedades propias 
+del objeto que estamos creando, sino que también tendrán otras propiedades por herencia.
+      Dentro del objeto Object, hay un función (Método) llamado Prototype, el cual a su vez, es 
+un objeto, entonces Prototype comparte todas sus propiedades con todos los objetos creados a 
+partir del objeto padre Object, y de allí a toda la cadena de prototipos.
+      Una de las utilidades del método Prototype, es modificar dicho método de manera de que 
+contenga los métodos que requerimos en las instancias creadas con un constructor o clase, ósea, 
+podemos usar el método Prototype para que contenga los métodos de una clase, de tal manera 
+que cuando se creen nuevas instancias con la clase, estas nuevas instancias no contendrán los 
+métodos del objeto, sino que los métodos quedan guardados en Prototype, y si las instancia 
+requieren de algún método, éste será buscado primero en la instancia y al no ser hallado, por la 
+cadena de prototipos será hallado en el método Prototype.  
+      Una clase de JavaScript es un tipo de función. (Que era como construía antes del ES6), por 
+eso se llamaban funciones constructoras, ahora con ES6, las clases se declaran con la palabra 
+clave class.
+ 
+      Sintaxis de declaración de función constructora.
+      const x = function() {}
+       
+      Sintaxis de declaración de clase.
+      const y = class {}
+       
+      
+Ejemplo de Constructor (CLASE) y Prototype:
+      
+function Usuario(nombre, apellido) {	// este es nuestro constructor o clase
+    this.nombre = nombre;		// que como podemos observar no
+    this.apellido = apellido;		// contiene los métodos del mismo
+}
+
+Usuario.prototype.intro = function(){	
+    return 'Mi nombre es ' + this.nombre + ' ' + this.apellido + '.';
+}					// este es nuestro prototipo, aquí
+					// están contenidos los métodos de
+					// nuestra clase
+
+let juan = new Usuario('Juan', 'Perez'); 		// creamos una instancia
+let maria = new Usuario('Maria', 'Gonzalez');	// creamos otra instancia
+
+console.log(juan.intro()); 		// Mi nombre es Juan Perez.
+console.log(maria.intro()); 		// Mi nombre es Maria Gonzalez.
+      Como vemos, hemos contenido la función intro en el método Prototype de la clase 
+Usuario, de esta manera, cada vez que creamos una instancia de la clase Usuario, dicha instancia 
+no contendrá la función intro, directamente en ella;  haciendo nuestro código más eficiente, al 
+usar menos recursos de memoria, pero cada vez, que las instancias requieran el método intro, 
+éste será hallado en el prototipo intro, ya que está ligado a la clase Usuario y por ende a nuestras 
+instancias.
+      Ya que nuestras instancias son objetos creados a partir de una clase, podemos agregar 
+más métodos directamente a cada instancia individualmente, si es necesario, pero estos nuevos 
+métodos solo estarán disponibles para dicha instancia. Si queremos agregar métodos para todas 
+nuestras instancia de una misma clase, debemos agregarlos en el prototipo de nuestra clase, de 
+esta manera, los métodos serán comunes a todas las instancias creadas con esa clase. 
