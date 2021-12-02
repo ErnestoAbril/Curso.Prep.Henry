@@ -1,0 +1,30 @@
+FUNCIONES CALLBACKS:
+
+	En JavaScript las funciones son objetos de primera clase, y como tal, podemos trabajar con 
+ellos de muchas formas, por ejemplo: como valores  de variable, propiedades de objetos, 
+argumentos a otras funciones, etc.
+      Las funciones Callback, son funciones que se pasan como argumentos de otras funciones 
+para ser llamadas de nuevo. Una función que acepta otras funciones como argumentos es llamada 
+función de orden-superior (High-Order),  uno de los objetivos de usar callbacks es escribir 
+funciones de una forma más legible.
+      Para crear un callback basta con que declaremos una función, y se la pasemos a otra 
+función como parámetro, después se ejecuta en el interior de dicha función.
+
+Ejemplo de CALLBACK
+
+function saludo() {		// una función sencilla
+  console.log('Hola!');
+}
+
+function hablar(callback) {	// Función que acepta otra función como parámetro
+  callback();			 // A esta llamada se le denomina callback
+}
+
+hablar(saludo);			// Pasamos una función a otra
+
+       En el ejemplo anterior, lo que hemos hecho, ha sido definir la función saludo() y la 
+función hablar(), esta última, acepta otra función como argumento. Luego ejecutamos la 
+función hablar() a la que pasamos la función saludo() como parámetro.
+
+Al ejecutar el código anterior obtendremos esta salida:
+//Hola!
