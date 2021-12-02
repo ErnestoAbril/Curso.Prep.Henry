@@ -257,14 +257,14 @@ function continueStatement(numero) {
   var numero2 = numero;
   const nuevoarreglo = [];
   for (var i = 0; i < 10; i++){
-    if (i === i) {
+    if (i === 5) {
       continue;
       }
       else {numero2 = numero2 + 2;
            nuevoarreglo.push(numero2);
     }
-    return nuevoarreglo;
-
+  }
+  return nuevoarreglo;
 }
 
 
